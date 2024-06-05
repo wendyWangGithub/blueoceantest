@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('s1') {
       steps {
         sh 'step1'
       }

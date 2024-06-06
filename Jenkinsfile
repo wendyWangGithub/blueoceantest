@@ -17,20 +17,7 @@ pipeline {
                 '''
             }
     }
-    
-    stage('Checkout') {
-            steps {
-                checkout([
-                    $class: 'GitSCM',
-                    branches: [[name: '*/master']],
-                    extensions: [],
-                    userRemoteConfigs: [[
-                        credentialsId: 'github-credentials',
-                        url: 'https://github.com/wendyWangGithub/blueoceantest.git'
-                    ]]
-                ])
-            }
-        }
+   
 
     stage('Run Playwright Tests') {
             steps {

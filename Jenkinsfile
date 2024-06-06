@@ -3,18 +3,19 @@ pipeline {
   stages {
 
     
-     stage('Install Playwright') {
+    stage('Verify Node.js and Playwright') {
             steps {
                 sh '''
-                    # Install Node.js
-                    curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-                    sudo apt-get install -y nodejs
-
-                    # Install Playwright
+                    # 检查 Node.js 版本
+                    node --version
+                    # 检查 npm 版本
+                    npm --version
+                    # 安装 Playwright
                     npm install -g playwright
+                    # 测试 Playwright 安装
+                    npx playwright --version
                 '''
             }
-        }
     
     stage('Checkout') {
             steps {

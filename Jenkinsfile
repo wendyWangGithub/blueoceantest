@@ -3,11 +3,16 @@ pipeline {
   stages {
 
     
-    stage('Install Playwright') {
+     stage('Install Playwright') {
             steps {
-                nodejs(nodeJSInstallationName: 'node') {
-                    sh 'npm install -g playwright'
-                }
+                sh '''
+                    # Install Node.js
+                    curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+                    sudo apt-get install -y nodejs
+
+                    # Install Playwright
+                    npm install -g playwright
+                '''
             }
         }
     

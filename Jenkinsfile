@@ -1,7 +1,10 @@
 pipeline {
   agent any
-  stages {
+    tools {
+        nodejs 'NodeJS' // 这里的 'NodeJS' 是Jenkins中配置的Node.js工具名称
+    }
 
+  stages {
     
     stage('Verify Node.js and Playwright') {
             steps {

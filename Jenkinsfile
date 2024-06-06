@@ -2,14 +2,6 @@ pipeline {
   agent any
   stages {
 
-
-    stage('Install Node.js') {
-            steps {
-                nodejs(nodeJSInstallationName: 'node') {
-                    sh 'npm install'
-                }
-            }
-        } 
     
     stage('Install Playwright') {
             steps {

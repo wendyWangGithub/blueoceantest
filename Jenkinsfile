@@ -24,7 +24,7 @@ pipeline {
 
     stage('Run Playwright Tests') {
             steps {
-                nodejs(nodeJSInstallationName: 'node') {
+                nodejs {
                     sh 'npx playwright test'
                 }
             }

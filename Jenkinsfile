@@ -16,6 +16,7 @@ pipeline {
                     npx playwright --version
                 '''
             }
+    }
     
     stage('Checkout') {
             steps {
